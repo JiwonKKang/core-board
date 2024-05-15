@@ -12,12 +12,15 @@ public class UserService {
 
     private final UserAppender userAppender;
     private final UserReader userReader;
+    private final PasswordValidator passwordValidator;
 
     public Long signUp(UserInfo userInfo) {
         return userAppender.append(userInfo);
     }
 
-    public UserDomain getUserInfo(Long userId) {
-        return userReader.read(userId);
+    public UserDomain login(String email, String password) {
+        UserDomain user = userReader.read(email);
+        passwordValidator.validate(user, password);
+        return user;
     }
 }

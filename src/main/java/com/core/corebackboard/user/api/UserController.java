@@ -22,9 +22,9 @@ public class UserController {
         return ResponseEntity.ok(createdUserId);
     }
 
-    @GetMapping("/users/{userId}")
-    public ResponseEntity<UserResponse> userInfo(@PathVariable Long userId) {
-        UserDomain domain = userService.getUserInfo(userId);
+    @GetMapping("/users")
+    public ResponseEntity<UserResponse> login(LoginRequest request) {
+        UserDomain domain = userService.login(request.email(), request.password());
         UserResponse response = UserResponse.from(domain);
         return ResponseEntity.ok(response);
     }
