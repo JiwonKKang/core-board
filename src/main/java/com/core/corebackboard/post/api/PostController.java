@@ -1,5 +1,6 @@
 package com.core.corebackboard.post.api;
 
+import com.core.corebackboard.post.dto.CreatePostRequest;
 import com.core.corebackboard.post.dto.PostResponse;
 import com.core.corebackboard.post.dto.UpdatePostRequest;
 import com.core.corebackboard.post.service.PostDomain;

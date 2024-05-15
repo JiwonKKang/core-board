@@ -1,4 +1,4 @@
-package com.core.corebackboard.like.entity;
+package com.core.corebackboard.like.dto;
 
 public enum LikeStatus {
     LIKE,

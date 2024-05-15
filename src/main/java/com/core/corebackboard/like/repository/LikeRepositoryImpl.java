@@ -1,6 +1,6 @@
 package com.core.corebackboard.like.repository;
 
-import com.core.corebackboard.like.api.LikeDomain;
+import com.core.corebackboard.like.service.LikeDomain;
 import com.core.corebackboard.like.entity.Like;
 import com.core.corebackboard.like.service.LikeRepository;
 import com.core.corebackboard.post.entity.Post;
