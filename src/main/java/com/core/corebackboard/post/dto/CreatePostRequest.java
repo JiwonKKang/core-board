@@ -1,4 +1,4 @@
-package com.core.corebackboard.post.api;
+package com.core.corebackboard.post.dto;
 
 import com.core.corebackboard.post.service.PostInfo;
 

@@ -1,7 +1,6 @@
 package com.core.corebackboard.like.service;
 
-import com.core.corebackboard.like.api.LikeDomain;
-import com.core.corebackboard.like.entity.LikeStatus;
+import com.core.corebackboard.like.dto.LikeStatus;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

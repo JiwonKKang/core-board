@@ -1,4 +1,4 @@
-package com.core.corebackboard.like.api;
+package com.core.corebackboard.like.service;
 
 public record LikeDomain(
         Long userId,

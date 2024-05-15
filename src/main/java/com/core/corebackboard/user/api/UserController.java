@@ -1,5 +1,6 @@
 package com.core.corebackboard.user.api;
 
+import com.core.corebackboard.user.dto.LoginRequest;
 import com.core.corebackboard.user.dto.SignUpRequest;
 import com.core.corebackboard.user.dto.UserResponse;
 import com.core.corebackboard.user.service.UserDomain;

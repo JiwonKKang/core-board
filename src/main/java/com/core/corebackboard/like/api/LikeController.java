@@ -1,6 +1,7 @@
 package com.core.corebackboard.like.api;
 
-import com.core.corebackboard.like.entity.LikeStatus;
+import com.core.corebackboard.like.dto.LikeRequest;
+import com.core.corebackboard.like.dto.LikeStatus;
 import com.core.corebackboard.like.service.LikeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

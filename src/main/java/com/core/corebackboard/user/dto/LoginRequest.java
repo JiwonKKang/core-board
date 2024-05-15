@@ -1,4 +1,4 @@
-package com.core.corebackboard.user.api;
+package com.core.corebackboard.user.dto;
 
 public record LoginRequest(
         String email,

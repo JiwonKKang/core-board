@@ -1,8 +1,5 @@
 package com.core.corebackboard.user.service;
 
-import com.core.corebackboard.user.entity.User;
-import com.core.corebackboard.user.repository.UserRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -13,16 +10,12 @@ public class UserReader {
     private final UserRepository userRepository;
 
     public UserDomain read(Long userId) {
-        User user = userRepository.findById(userId)
-                .orElseThrow(EntityNotFoundException::new);
 
-        return user.toDomain();
+        return userRepository.findByUserId(userId);
     }
 
     public UserDomain read(String email) {
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(EntityNotFoundException::new);
-        return user.toDomain();
+        return userRepository.findByEmail(email);
     }
 
 }
