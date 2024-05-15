@@ -27,6 +27,4 @@ public class Post {
     @ManyToOne
     @JoinColumn(name = "writer_id")
     private User writer;
-
-
 }
