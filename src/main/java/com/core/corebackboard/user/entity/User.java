@@ -33,4 +33,19 @@ public class User {
                 )
         );
     }
+
+    public static User from(UserDomain domain) {
+        return User.builder()
+                .id(domain.id())
+                .name(domain.info().name())
+                .email(domain.info().email())
+                .password(domain.info().password())
+                .build();
+    }
+
+    public static User from(Long userId) {
+        return User.builder()
+                .id(userId)
+                .build();
+    }
 }
