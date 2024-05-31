@@ -5,8 +5,10 @@ import com.core.corebackboard.post.dto.PostResponse;
 import com.core.corebackboard.post.dto.UpdatePostRequest;
 import com.core.corebackboard.post.service.PostDomain;
 import com.core.corebackboard.post.service.PostService;
+import com.core.corebackboard.user.service.UserDomain;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,8 +18,8 @@ public class PostController {
     private final PostService postService;
 
     @PostMapping("/posts")
-    public ResponseEntity<Long> createPost(@RequestBody CreatePostRequest postRequest) {
-        Long createdPostId = postService.writePost(postRequest.toPostInfo(), postRequest.userId());
+    public ResponseEntity<Long> createPost(@RequestBody CreatePostRequest postRequest, @AuthenticationPrincipal UserDomain userDomain) {
+        Long createdPostId = postService.writePost(postRequest.toPostInfo(), userDomain.id());
         return ResponseEntity.ok(createdPostId);
     }
 

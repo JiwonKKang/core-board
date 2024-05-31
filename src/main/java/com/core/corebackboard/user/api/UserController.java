@@ -24,9 +24,7 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public ResponseEntity<UserResponse> login(LoginRequest request) {
-        UserDomain domain = userService.login(request.email(), request.password());
-        UserResponse response = UserResponse.from(domain);
-        return ResponseEntity.ok(response);
+    public ResponseEntity<String> login(LoginRequest request) {
+        return ResponseEntity.ok(userService.login(request.email(), request.password()));
     }
 }

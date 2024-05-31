@@ -41,4 +41,12 @@ public class UserJpaJpaRepositoryImpl implements UserRepository {
                 .orElseThrow(
                         () -> new EntityNotFoundException("User not found"));
     }
+
+    @Override
+    public UserDomain findByUsername(String username) {
+        return userJpaRepository.findByName(username)
+                .map(User::toDomain)
+                .orElseThrow(
+                        () -> new EntityNotFoundException("User not found"));
+    }
 }

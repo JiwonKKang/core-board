@@ -4,8 +4,7 @@ import com.core.corebackboard.post.service.PostInfo;
 
 public record CreatePostRequest(
         String title,
-        String content,
-        Long userId
+        String content
 ) {
 
     public PostInfo toPostInfo() {

@@ -1,5 +1,6 @@
 package com.core.corebackboard.user.service;
 
+import com.core.corebackboard.user.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
@@ -18,4 +19,7 @@ public class UserReader {
         return userRepository.findByEmail(email);
     }
 
+    public UserDomain readByName(String username) {
+        return userRepository.findByUsername(username);
+    }
 }

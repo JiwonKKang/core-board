@@ -1,5 +1,7 @@
 package com.core.corebackboard.user.service;
 
+import com.core.corebackboard.user.entity.User;
+
 public interface UserRepository {
 
     Long save(UserInfo userInfo);
@@ -7,4 +9,6 @@ public interface UserRepository {
     UserDomain findByEmail(String email);
 
     UserDomain findByUserId(Long userId);
+
+    UserDomain findByUsername(String username);
 }

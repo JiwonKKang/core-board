@@ -1,5 +1,6 @@
 package com.core.corebackboard.user.service;
 
+import com.core.corebackboard.util.JwtTokenUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -18,9 +19,9 @@ public class UserService {
         return userAppender.append(userInfo);
     }
 
-    public UserDomain login(String email, String password) {
+    public String login(String email, String password) {
         UserDomain user = userReader.read(email);
         passwordValidator.validate(user, password);
-        return user;
+        return JwtTokenUtil.generateAccessToken(user.info().name());
     }
 }
